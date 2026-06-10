@@ -1,0 +1,27 @@
+# ---- Python ----
+__pycache__/
+*.py[cod]
+*.pyo
+.venv/
+venv/
+*.egg-info/
+
+# ---- MediaPipe モデル (大きいので追跡しない) ----
+*.task
+
+# ---- 測定データ・写真 (個人情報) ----
+data/
+
+# ---- レポート出力 ----
+reports/
+
+# ---- Mac ----
+.DS_Store
+.AppleDouble
+
+# ---- VSCode ----
+.vscode/
+
+# ---- draw.io バックアップ ----
+*.drawio.bkp
+*.drawio.dtmp

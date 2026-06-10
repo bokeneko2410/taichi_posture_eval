@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="app.diagrams.net" agent="Claude" version="24.0.0" type="device">
+  <diagram name="taichi_eval_flow_v1.1" id="taichi-eval-flow-v11">
+    <mxGraphModel dx="950" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="900" pageHeight="960" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="lane_setup" value="初期準備（指導者・一度だけ）" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#999999;dashed=1;verticalAlign=top;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="40" y="40" width="820" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="define_pose" value="キーポーズ定義&#10;（要訣・重み・評価面）" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="70" y="90" width="200" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="ref_photos" value="お手本写真の登録&#10;（B基準・複数枚）" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="350" y="90" width="200" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="calc_range" value="許容範囲の算出&#10;（規定値＋平均±2σ）" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="630" y="90" width="200" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="lane_calib" value="セッション開始（毎回）" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#999999;dashed=1;verticalAlign=top;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="40" y="230" width="820" height="180" as="geometry" />
+        </mxCell>
+        <mxCell id="calib_shoot" value="キャリブレーション撮影&#10;预备式（正面・側面・背面）&#10;＋怒らせ肩（正面）" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="70" y="285" width="220" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="baseline" value="本人ベースライン算出&#10;（C・D の基準点）" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="360" y="295" width="200" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="gate" value="品質ゲート＋感度チェック&#10;不合格なら C・D を保留" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="630" y="295" width="200" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="lane_eval" value="評価（キーポーズごと）" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#999999;dashed=1;verticalAlign=top;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="40" y="440" width="820" height="330" as="geometry" />
+        </mxCell>
+        <mxCell id="shoot" value="キーポーズ撮影&#10;（撮影ガイド・服装ルール）" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="70" y="495" width="220" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="extract" value="姿勢抽出&#10;（ランドマーク＋シルエット&#10;＋信頼度）" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="360" y="490" width="200" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="metrics" value="要訣指標の算出&#10;A:構造 B:お手本&#10;C:保持 D:変化" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="630" y="490" width="200" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="judge" value="判定&#10;OK / 注意 / 要修正&#10;測定不能・未評価は明示&#10;（墜肘↔沈肩の相関チェック）" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="1">
+          <mxGeometry x="360" y="640" width="240" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="lane_out" value="出力" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#999999;dashed=1;verticalAlign=top;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="40" y="800" width="820" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="feedback" value="指導の言葉での&#10;フィードバック" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
+          <mxGeometry x="80" y="850" width="200" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="overlay" value="比較図&#10;（重ね描き＋強調表示）" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
+          <mxGeometry x="360" y="850" width="200" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="history" value="履歴の更新&#10;（ベースライン履歴含む）" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
+          <mxGeometry x="640" y="850" width="200" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="e1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;" edge="1" parent="1" source="define_pose" target="ref_photos">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;" edge="1" parent="1" source="ref_photos" target="calc_range">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;" edge="1" parent="1" source="calib_shoot" target="baseline">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;" edge="1" parent="1" source="baseline" target="gate">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;" edge="1" parent="1" source="shoot" target="extract">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;" edge="1" parent="1" source="extract" target="metrics">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;" edge="1" parent="1" source="metrics" target="judge">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e8" value="許容範囲(B)" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;dashed=1;" edge="1" parent="1" source="calc_range" target="judge">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e9" value="ベースライン(C・D)" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;dashed=1;" edge="1" parent="1" source="gate" target="judge">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;" edge="1" parent="1" source="judge" target="feedback">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e11" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;" edge="1" parent="1" source="judge" target="overlay">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e12" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;" edge="1" parent="1" source="judge" target="history">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
